@@ -1,0 +1,47 @@
+<mat-toolbar>
+  <button mat-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">Logo
+    <p *ngIf="!sidenav.opened">
+    </p>
+    <p *ngIf="sidenav.opened">
+    </p>
+  </button>
+  <span style="padding: 9px;">Dashboard</span>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <button mat-button class="menu-button" (click)="onClick()">
+      <mat-icon>dashboard</mat-icon>
+      <a routerLink="/dashboard"><span style="color: white;">Dashboard</span></a>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>classes</mat-icon>
+      <span>Classes</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon style="overflow: auto;">resources</mat-icon>
+      Resources
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>chat</mat-icon>
+      <span>Chat</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
